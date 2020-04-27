@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ruckertech.inventory",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "inventoryNoElastic",
+    "packageName": "com.ruckertech.inventory",
+    "packageFolder": "com/ruckertech/inventory",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "OTM4Yjk5N2YxMjBkYTViNTJjZDQzOTdlNDRhNjU0ZDhiYWY2YWUzOTFjNmI3NzFlZjExZGI1NWY2ZjkwZjVhOWU5MGViNWEyNWY2NzAxMzg5OGZkN2Y0NWZlMGE3ZjA1YTIzZDYzYzE0YmUzNDE4ZjY1NDczMTFmZTE2NTRlZmQ=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1588024930610,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "fr", "de", "it", "ja", "es"],
+    "blueprints": []
+  }
+}
