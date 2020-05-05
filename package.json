@@ -22,6 +22,8 @@
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
+    "@zxing/ngx-scanner": "^3.0.0",
+    "angular2-qrcode": "^2.0.3",
     "bootstrap": "4.4.1",
     "moment": "2.24.0",
     "ng-jhipster": "0.12.0",

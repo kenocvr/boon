@@ -7,6 +7,8 @@ import { InventoryNoElasticCoreModule } from 'app/core/core.module';
 import { InventoryNoElasticAppRoutingModule } from './app-routing.module';
 import { InventoryNoElasticHomeModule } from './home/home.module';
 import { InventoryNoElasticEntityModule } from './entities/entity.module';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -23,7 +25,8 @@ import { ErrorComponent } from './layouts/error/error.component';
     InventoryNoElasticHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     InventoryNoElasticEntityModule,
-    InventoryNoElasticAppRoutingModule
+    InventoryNoElasticAppRoutingModule,
+    ZXingScannerModule
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent]

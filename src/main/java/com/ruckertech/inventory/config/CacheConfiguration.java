@@ -42,6 +42,9 @@ public class CacheConfiguration {
             createCache(cm, com.ruckertech.inventory.domain.User.class.getName());
             createCache(cm, com.ruckertech.inventory.domain.Authority.class.getName());
             createCache(cm, com.ruckertech.inventory.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.ruckertech.inventory.domain.Location.class.getName());
+            createCache(cm, com.ruckertech.inventory.domain.Location.class.getName() + ".items");
+            createCache(cm, com.ruckertech.inventory.domain.Item.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="item">
+            <h2><span jhiTranslate="inventoryNoElasticApp.item.detail.title">Item</span> {{ item.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="inventoryNoElasticApp.item.itemName">Item Name</span></dt>
+                <dd>
+                    <span>{{ item.itemName }}</span>
+                </dd>
+                <dt><span jhiTranslate="inventoryNoElasticApp.item.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="item.image">
+                        <a (click)="openFile(item?.imageContentType!, item?.image)">
+                            <img [src]="'data:' + item.imageContentType + ';base64,' + item.image" style="max-width: 100%;" alt="item image"/>
+                        </a>
+                        {{ item.imageContentType }}, {{ byteSize(item.image) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="inventoryNoElasticApp.item.tag">Tag</span></dt>
+                <dd>
+                    <span>{{ item.tag }}</span>
+                </dd>
+                <dt><span jhiTranslate="inventoryNoElasticApp.item.qrCode">Qr Code</span></dt>
+                <dd>
+                    <div *ngIf="item.qrCode">
+                        <a (click)="openFile(item?.qrCodeContentType!, item?.qrCode)" jhiTranslate="entity.action.open">open</a>
+                        {{ item.qrCodeContentType }}, {{ byteSize(item.qrCode) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="inventoryNoElasticApp.item.barCode">Bar Code</span></dt>
+                <dd>
+                    <div *ngIf="item.barCode">
+                        <a (click)="openFile(item?.barCodeContentType!, item?.barCode)" jhiTranslate="entity.action.open">open</a>
+                        {{ item.barCodeContentType }}, {{ byteSize(item.barCode) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="inventoryNoElasticApp.item.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="item.locationId">
+                        <a [routerLink]="['/location', item.locationId, 'view']">{{ item.locationId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/item', item.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<div >
+    <qr-code [value]= value  [size]="150"></qr-code>
+</div>
+
+<div *ngIf="item">
+    <a>Id: {{ item.id }}</a>
+    <div></div>
+    <a>Name: {{ item.itemName }}</a>
+</div>
+
+<button class="no-print" (click)="printPage()">Print Code</button>
+
+<div></div>
+
+<button onclick="location.href='https://ngxscanner.web.app'" type="button">
+    Scan Again</button>
+
+<div></div>

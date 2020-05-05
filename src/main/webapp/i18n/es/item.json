@@ -1,0 +1,27 @@
+{
+  "inventoryNoElasticApp": {
+    "item": {
+      "home": {
+        "title": "Items",
+        "createLabel": "Crear nuevo Item",
+        "createOrEditLabel": "Crear o editar Item",
+        "notFound": "Ningún Items encontrado"
+      },
+      "created": "Un nuevo Item ha sido creado con el identificador {{ param }}",
+      "updated": "Un Item ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Item ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Item"
+      },
+      "itemName": "Item Name",
+      "image": "Image",
+      "tag": "Tag",
+      "qrCode": "Qr Code",
+      "barCode": "Bar Code",
+      "location": "Location"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+entity Location{
+	locationName String,
+    image ImageBlob,
+    tag String,
+    qrCode Blob,
+    barCode Blob
+}
+
+entity Item{
+	itemName String,
+    image ImageBlob,
+    tag String,
+    qrCode Blob,
+    barCode Blob
+
+}
+
+relationship OneToMany{
+	Location{item} to Item{location}
+}
+
+
+service all with serviceImpl
+dto all with mapstruct
+filter all

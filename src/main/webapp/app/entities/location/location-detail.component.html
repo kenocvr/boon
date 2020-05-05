@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="location">
+            <h2><span jhiTranslate="inventoryNoElasticApp.location.detail.title">Location</span> {{ location.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="inventoryNoElasticApp.location.locationName">Location Name</span></dt>
+                <dd>
+                    <span>{{ location.locationName }}</span>
+                </dd>
+                <dt><span jhiTranslate="inventoryNoElasticApp.location.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="location.image">
+                        <a (click)="openFile(location?.imageContentType!, location?.image)">
+                            <img [src]="'data:' + location.imageContentType + ';base64,' + location.image" style="max-width: 100%;" alt="location image"/>
+                        </a>
+                        {{ location.imageContentType }}, {{ byteSize(location.image) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="inventoryNoElasticApp.location.tag">Tag</span></dt>
+                <dd>
+                    <span>{{ location.tag }}</span>
+                </dd>
+                <dt><span jhiTranslate="inventoryNoElasticApp.location.qrCode">Qr Code</span></dt>
+                <dd>
+                    <div *ngIf="location.qrCode">
+                        <a (click)="openFile(location?.qrCodeContentType!, location?.qrCode)" jhiTranslate="entity.action.open">open</a>
+                        {{ location.qrCodeContentType }}, {{ byteSize(location.qrCode) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="inventoryNoElasticApp.location.barCode">Bar Code</span></dt>
+                <dd>
+                    <div *ngIf="location.barCode">
+                        <a (click)="openFile(location?.barCodeContentType!, location?.barCode)" jhiTranslate="entity.action.open">open</a>
+                        {{ location.barCodeContentType }}, {{ byteSize(location.barCode) }}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/location', location.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

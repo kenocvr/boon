@@ -1,0 +1,80 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="inventoryNoElasticApp.location.home.title">Locations</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-location" [routerLink]="['/location/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="inventoryNoElasticApp.location.home.createLabel">
+            Create a new Location
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="locations?.length === 0">
+        <span jhiTranslate="inventoryNoElasticApp.location.home.notFound">No locations found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="locations?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="inventoryNoElasticApp.location.locationName">Location Name</span></th>
+                    <th scope="col" ><span jhiTranslate="inventoryNoElasticApp.location.image">Image</span></th>
+                    <th scope="col" ><span jhiTranslate="inventoryNoElasticApp.location.tag">Tag</span></th>
+                    <th scope="col" ><span jhiTranslate="inventoryNoElasticApp.location.qrCode">Qr Code</span></th>
+                    <th scope="col" ><span jhiTranslate="inventoryNoElasticApp.location.barCode">Bar Code</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let location of locations ;trackBy: trackId">
+                    <td><a [routerLink]="['/location', location.id, 'view']">{{ location.id }}</a></td>
+                    <td>{{ location.locationName }}</td>
+                    <td>
+                        <a *ngIf="location.image" (click)="openFile(location.imageContentType, location.image)">
+                            <img [src]="'data:' + location.imageContentType + ';base64,' + location.image" style="max-height: 30px;" alt="location image"/>
+                        </a>
+                        <span *ngIf="location.image">{{ location.imageContentType }}, {{ byteSize(location.image) }}</span>
+                    </td>
+                    <td>{{ location.tag }}</td>
+                    <td>
+                        <a *ngIf="location.qrCode" (click)="openFile(location.qrCodeContentType, location.qrCode)" jhiTranslate="entity.action.open">open</a>
+                        <span *ngIf="location.qrCode">{{ location.qrCodeContentType }}, {{ byteSize(location.qrCode) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="location.barCode" (click)="openFile(location.barCodeContentType, location.barCode)" jhiTranslate="entity.action.open">open</a>
+                        <span *ngIf="location.barCode">{{ location.barCodeContentType }}, {{ byteSize(location.barCode) }}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/location', location.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/location', location.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(location)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
