@@ -4,7 +4,13 @@ QR Codes - :gear: Generate, :printer: Print, and :mag_right: Scan
 
 :bar_chart: Track Items
 
-## Demo
+## Screens
+
+![item](https://github.com/kenocvr/boon/blob/master/screens/item.png=200)
+<img src="https://github.com/kenocvr/boon/blob/master/screens/item.png" width="200" height="300">
+
+![scan](https://github.com/kenocvr/boon/blob/master/screens/scan.png)
+<img src="https://github.com/kenocvr/boon/blob/master/screens/scan.png" width="200" height="300">
 
 ## Install
 
