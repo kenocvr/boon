@@ -1,5 +1,11 @@
 # Boon - Inventory Management System
 
+QR Codes - :gear: Generate, :printer: Print, and :mag_right: Scan
+
+:bar_chart: Track Items
+
+## Demo
+
 ## Install
 
     npm install
