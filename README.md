@@ -8,10 +8,18 @@ QR Codes - :gear: Generate, :printer: Print, and :mag_right: Scan
 
     npm install
 
-## Run
+## Run Inventory Client
 
     ./mvnw
     npm start
+    
+## Install & Run Scanner Client
+
+    https://github.com/kenocvr/boon-qr-scanner
+    ## Based on ngx-scanner 
+        
+## Done!
+
 
 ## Docker (Optional)
 
