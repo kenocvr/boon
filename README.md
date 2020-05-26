@@ -1,5 +1,12 @@
 # Boon - Inventory Management System
 
+
+
+![Application CI](https://github.com/kenocvr/boon/workflows/Application%20CI/badge.svg)
+
+
+
+
 QR Codes - :gear: Generate, :printer: Print, and :mag_right: Scan
 
 :bar_chart: Track Items
