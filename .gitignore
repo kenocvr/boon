@@ -119,6 +119,11 @@ Desktop.ini
 /deploy/
 
 ######################
+# Config
+######################
+/src/main/resources/config/ebay-config.yaml
+
+######################
 # Logs
 ######################
 *.log*

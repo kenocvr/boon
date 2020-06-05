@@ -1,5 +1,6 @@
 package com.ruckertech.inventory;
 
+import com.ebay.api.client.auth.oauth2.CredentialUtil;
 import com.ruckertech.inventory.config.ApplicationProperties;
 
 import io.github.jhipster.config.DefaultProfileUtil;
@@ -15,10 +16,15 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
+
+
+
 
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
@@ -27,6 +33,10 @@ public class InventoryNoElasticApp {
     private static final Logger log = LoggerFactory.getLogger(InventoryNoElasticApp.class);
 
     private final Environment env;
+
+    private static final String ebayConfig = "src/main/resources/config/ebay-config.yaml";
+
+
 
     public InventoryNoElasticApp(Environment env) {
         this.env = env;
@@ -40,7 +50,7 @@ public class InventoryNoElasticApp {
      * You can find more information on how profiles work with JHipster on <a href="https://www.jhipster.tech/profiles/">https://www.jhipster.tech/profiles/</a>.
      */
     @PostConstruct
-    public void initApplication() {
+    public void initApplication() throws FileNotFoundException {
         Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
         if (activeProfiles.contains(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT) && activeProfiles.contains(JHipsterConstants.SPRING_PROFILE_PRODUCTION)) {
             log.error("You have misconfigured your application! It should not run " +
@@ -50,6 +60,10 @@ public class InventoryNoElasticApp {
             log.error("You have misconfigured your application! It should not " +
                 "run with both the 'dev' and 'cloud' profiles at the same time.");
         }
+
+        CredentialUtil.load(new FileInputStream(ebayConfig));
+
+
     }
 
     /**

@@ -19,12 +19,15 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
+
 /**
  * REST controller for managing {@link com.ruckertech.inventory.domain.Item}.
  */
 @RestController
 @RequestMapping("/api")
 public class ItemResource {
+
+
 
     private final Logger log = LoggerFactory.getLogger(ItemResource.class);
 

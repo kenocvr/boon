@@ -335,6 +335,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-heroku-connector</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.ebay.auth</groupId>
+            <artifactId>ebay-oauth-java-client</artifactId>
+            <version>1.1.0</version>
+        </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
     </dependencies>
 
@@ -692,6 +697,13 @@
                             <artifactId>h2</artifactId>
                             <version>${h2.version}</version>
                         </dependency>
+
+                        <dependency>
+                            <groupId>com.ebay.auth</groupId>
+                            <artifactId>ebay-oauth-java-client</artifactId>
+                            <version>1.1.0</version>
+                        </dependency>
+
                     </dependencies>
                 </plugin>
                 <plugin>
